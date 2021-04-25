@@ -1,0 +1,14 @@
+from time import sleep
+from picamera import PiCamera
+
+camera = PiCamera()
+startRecording = 5
+endRecording = 1800
+
+
+sleep(startRecording)
+camera.start_preview()
+camera.start_recording('/home/pi/Desktop/space3.h264')
+sleep(endRecording)
+camera.stop_recording()
+camera.stop_preview()
